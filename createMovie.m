@@ -29,7 +29,7 @@ catch
     inname = 'movieIms/Seq';
 end
 
-fprintf('Saving %s...',[outname '.avi']); t=tic;
+fprintf('Saving %s ...',[outname '.avi']); t=tic;
 writerObj = VideoWriter([outname '.avi']);
 writerObj.FrameRate = FrameRate; 
 open(writerObj);
