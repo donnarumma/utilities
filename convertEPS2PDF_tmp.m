@@ -28,8 +28,8 @@ for r=1:R
         cd(tmp_dir);
         files=dir('*.eps');
         for i=1:length(files)
-            eps2pdf_old(files(i).name,fullGsPath_);
-            % eps2pdf(files(i).name,[files(i).name(1:end-3:end) '.pdf']);
+            % eps2pdf_old(files(i).name,fullGsPath_);
+            eps2pdf(files(i).name,[files(i).name(1:end-3:end) '.pdf']);
             
             if delc
                 delete(files(i).name);

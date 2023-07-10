@@ -6,3 +6,4 @@ set(hfig,'visible','off');
 set(hfig, 'PaperPositionMode','auto');
 set(hfig,'Position',p);
 % yl=get(gca,'ylim');
+set(hfig,'color','w');
