@@ -81,10 +81,10 @@ lowlevel                 =means-sigmas;
 lowlevel ( lowlevel<low) =low;
 highlevel                =means+sigmas;
 highlevel(highlevel>high)=high;
-
+facealpha=0.6;
 if fill_option
     out.bars = fill([times(:)' fliplr(times(:)')], [highlevel(:)' fliplr(lowlevel(:)')],c2);
-    set(out.bars,'Edgecolor',c2);
+    set(out.bars,'Edgecolor',c2,'facealpha',facealpha);
 else
     for i=1:T
         t   = linspace(    times(i),    times(i+1),hm);

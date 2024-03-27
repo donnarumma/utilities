@@ -1,5 +1,5 @@
-function createMovie(inname,outname,params)
-%%function createMovie(inname,outname,params)
+function   createMovie(inname,outname,params)
+% function createMovie(inname,outname,params)
 default_params=paramsCreateMovie;
 try
     params=recopyFields(params,default_params);
@@ -35,10 +35,12 @@ writerObj.FrameRate = FrameRate;
 open(writerObj);
     
 if ~params.dirmode
-    nS = length(dir ([inname '*.' ext]));
+    fns= dir ([inname '*.' ext]);
+    nS = length(fns);
     imnames=cell(1,nS);
     for i=1:nS
-        imnames{i}=[inname num2str(i) '.' ext];
+        % imnames{i}=[inname num2str(fns(i).name) '.' ext];
+        imnames{i}=[fns(1).folder filesep fns(i).name];
     end
 else
     goodfiles   = dir([inname '*.' ext]);
